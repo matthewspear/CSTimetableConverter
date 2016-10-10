@@ -55,7 +55,7 @@ The groupings are Labs, Lectures, Workshops / Examples and Other (as seen below)
 The split calendar script can be ran by following the instructions above steps 1 - 4 then running:
 
 ```
-python load_timetable.py
+python load_split_timetable.py
 ```
 
 the script will create 4 ics files: Labs, Lectures, Workshops and Other. Open all of these as new calendars and run regularly to ensure they remain up to date.
