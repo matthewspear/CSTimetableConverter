@@ -29,12 +29,19 @@ replacements = {
         'COMP15111':'Architecture',
         'COMP16212':'Java',
         'COMP18112':'Distributed Systems',
-        'COMP24111':'Machine Learning',
-        'COMP23420':'Software Engineering',
         'COMP23111':'Databases',
+        'COMP23420':'Software Engineering',
         'COMP25111':'Operating Systems',
         'COMP26120':'Algorithms',
-        'COMP28411':'Networks'
+        'COMP21111':'Logic and Modelling',
+        'COMP22111':'Processor Microarchitecture',
+        'COMP24111':'Machine Learning',
+        'COMP28411':'Networks',
+        'COMP22712':'Microcontrollers',
+        'COMP24412':'Symbolic AI',
+        'COMP27112':'Computer Graphics',
+        'COMP28112':'Distributed Computing',
+        'COMP28512':'Mobile Systems'
         }
 
 def main():
