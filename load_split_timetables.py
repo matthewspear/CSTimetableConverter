@@ -1,21 +1,23 @@
 import os
 import sys
 import urllib2
+from datetime import datetime
 from icalendar import Calendar
 
+# calendar url
 path = os.path.dirname(os.path.abspath(__file__))
 url = ''
 
+# options
+open_on_completion = False
+
+# filenames
 lectures_name = 'Lectures.ics'
 workshops_name = 'Workshops.ics'
 labs_name = 'Labs.ics'
 other_name = 'Other.ics'
 
-global lectures
-global workshops
-global labs
-global other
-
+# replacements
 replacements = {
         'COMP-1st Yr Tutorial': 'Tutorial',
         'COMP-2nd Yr Tutorial (SH)': 'Tutorial',
@@ -44,6 +46,11 @@ replacements = {
         'COMP28512':'Mobile Systems'
         }
 
+global lectures
+global workshops
+global labs
+global other
+
 def main():
     global lectures
     global workshops
@@ -68,11 +75,18 @@ def main():
         event['location'] = remove_comma(event)
         append_to_calendar(event)
 
-    # write + open files
-    open_calendar(lectures_name, lectures)
-    open_calendar(workshops_name, workshops)
-    open_calendar(labs_name, labs)
-    open_calendar(other_name, other)
+    # write files
+    write_calendar(lectures_name, lectures)
+    write_calendar(workshops_name, workshops)
+    write_calendar(labs_name, labs)
+    write_calendar(other_name, other)
+
+    # open files
+    if open_on_completion:
+        open_calendar(lectures_name)
+        open_calendar(workshops_name)
+        open_calendar(labs_name)
+        open_calendar(other_name)
 
 def calculate_name(event):
     summary = event.get('summary')
@@ -116,10 +130,12 @@ def create_calendar():
     calendar.add('version', '2.0')
     return calendar
 
-def open_calendar(name, calendar):
+def write_calendar(name, calendar):
     f = open(name, 'w+b')
     f.write(calendar.to_ical())
     f.close()
+
+def open_calendar(name):
     open_file(path + '/' + name)
 
 def open_file(path):
