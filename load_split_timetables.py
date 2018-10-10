@@ -43,7 +43,22 @@ replacements = {
         'COMP24412':'Symbolic AI',
         'COMP27112':'Computer Graphics',
         'COMP28112':'Distributed Computing',
-        'COMP28512':'Mobile Systems'
+        'COMP28512':'Mobile Systems',
+        'COMP30040':'Third Year Project',
+        'COMP32211':'System-on-Chip',
+        'COMP33511':'User Experience',
+        'COMP33711':'Software Engineering',
+        'COMP36111':'Advanced Algorithms 1',
+        'COMP37111':'Advanced Computer Graphics',
+        'COMP38411':'Cryptography',
+        'COMP34412':'Natural Language Systems',
+        'COMP35112':'Chip Multiprocessors',
+        'COMP36212':'Advanced Algorithms 2',
+        'COMP36512':'Compilers',
+        'COMP37212':'Computer Vision',
+        'COMP32412':'Internet of Things',
+        'COMP34120':'AI and Games',
+        'COMP38120':'Documents, Service and Data'
         }
 
 global lectures
