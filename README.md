@@ -39,23 +39,50 @@
 	
 6. Import as a new calendar
 
-7. Run regularly to ensure calendar remains up to date
+7. Run regularly to ensure calendar remains up to date (see Calendar Updates)
 
 --------
 
 ## Split Calendar
 
-The `load_split_timetables.py` script can be used to create 4 different calendar files based on event description e.g if event contains "LECTURE" in description put it in the Lecture calendar.
+By default the `load_timetable.py` script can be used to create 4 different calendar files based on event description e.g if event contains "LECTURE" in description put it in the Lecture calendar.
+
 
 The groupings are Labs, Lectures, Workshops / Examples and Other (as seen below).
 
 ![Calendar](./images/Calendar.png)
 
+If prefered just a single calendar then it can be exported by setting:
 
-The split calendar script can be ran by following the instructions above steps 1 - 4 then running:
+```python
+split_calendar = False
+```
+and running the script.
+
+## Calendar Updates
+
+After the first run the script will check for updates in the calendar and then re-write the calendar files.
+
+Example console output for deleted, added and updated:
 
 ```
-python load_split_timetable.py
+> Checking for changes to timetable...
+
+Deleted Events:
+	COMP30040 on 2018-09-21 11:00:00
+	COMP33511 on 2018-10-26 16:00:00
+	COMP33511 on 2018-09-25 17:00:00
+	COMP30040 on 2018-09-19 15:00:00
+
+Added Events:
+	COMP30040 on 2018-09-21 11:00:00
+	COMP33511 on 2018-09-25 17:00:00
+	COMP33511 on 2018-10-22 17:00:00
+
+Updated Events:
+	COMP37111 on 2018-09-27 16:00:00
+
+WARNING: Changes found - Re-import files to calendar to update
 ```
 
-the script will create 4 ics files: Labs, Lectures, Workshops and Other. Open all of these as new calendars and run regularly to ensure they remain up to date.
+The new files then must be updated / re-imported into Calendar.
